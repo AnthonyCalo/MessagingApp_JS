@@ -3,7 +3,7 @@ import { useConversations } from '../contexts/ConversationProvider'
 import { ListGroup } from 'react-bootstrap'
 
 export default function Conversations() {
-    const {conversations, selectConversationsIndex}=useConversations()
+    const {conversations, selectConversationIndex}=useConversations()
     console.log(conversations)
     return (
         <ListGroup variant="flush">
@@ -11,7 +11,7 @@ export default function Conversations() {
                 <ListGroup.Item 
                     key={index}
                     action
-                    onClick={()=>selectConversationsIndex(index)}
+                    onClick={()=>selectConversationIndex(index)}
                     active={conversation.selected}
                     >
                     {conversation.recipients.map(r=>r.name).join(", ")}

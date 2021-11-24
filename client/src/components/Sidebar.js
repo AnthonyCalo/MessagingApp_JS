@@ -43,6 +43,7 @@ export default function Sidebar({id}) {
                     New {conversationOpen ? "Conversation" : "Contact"}
                 </Button>
             </Tab.Container>
+            {/* //if conversation is open show new convo else show new contact */}
             <Modal show={modalOpen} onHide={closeModal}>
                 {conversationOpen ? 
                 <NewConversationModal closeModal={closeModal}/>: <NewContactModal closeModal={closeModal}/>}
